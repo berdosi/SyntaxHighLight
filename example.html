@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Example Usage</title>
+</head>
+
+<body>
+    <h1>SyntaxHighlight example</h1>
+    <p>Click <button id="runExample">this button</button> to syntax highlight the below code sample.</p>
+    <div id="example">
+        <pre>
+
+Option Explicit 
+
+Const MESSAGE As String = "Hello "
+
+Sub GreetMe(Name As String)
+'
+' Greet the user on their name.
+'
+
+    Range("B1").Value = MESSAGE & Name ' TODO : this is mean.
+    MsgBox("I hope you didn't have anything important in B1. I was just trying to be nice.")
+
+End Sub
+</pre>
+    </div>
+    <script src="syntax-VBA.js"></script>
+    <script src="syntaxHighlight.js"></script>
+    <script>
+        document.getElementById("runExample").addEventListener(
+            "click",
+            function() {
+                "use strict";
+                const targetElement = document.getElementById("example");
+                const syntax = new SyntaxHighlight(tokenListVBA);
+                targetElement.replaceChild(
+                    syntax.generateHtml(
+                        syntax.tokenize(
+                            targetElement.firstElementChild.textContent, 
+                            tokenListVBA)), 
+                    targetElement.firstElementChild)
+            });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+.code {
+    font-family: monospace;
+    font-size: 12px;
+}
+
+.escapedChar {
+    color: darkslategray;
+}
+.stringStart, .stringEnd {
+    color: darkblue;
+}
+.stringText {
+    color: gray;
+}
+.comment {
+    color: green;
+}
+.keyword {
+    color: darkblue;
+    font-weight: bold;
+}
+.type {
+    color: darkblue;
+}
+.number {
+    color: red;
+}
+.parentheses {
+    color: gray;
+    font-weight: bold;
+}
