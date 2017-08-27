@@ -29,3 +29,6 @@
     color: gray;
     font-weight: bold;
 }
+.whitespace {
+    white-space: pre;
+}
